@@ -98,14 +98,13 @@ namespace boost {
 
     struct visitor
     {
-      typedef typename Graph::vertex_descriptor vertex_descriptor;
       typedef on_examine_vertex event_filter;
-      visitor(vertex_descriptor dst): m_dst(dst) {}
-      void operator()(vertex_descriptor v, const Graph& g) {
+      visitor(typename Graph::vertex_descriptor dst): m_dst(dst) {}
+      void operator()(typename Graph::vertex_descriptor v, const Graph& g) {
         if (v == m_dst)
           throw exception();
       }
-      vertex_descriptor m_dst;
+      typename Graph::vertex_descriptor m_dst;
     };
 
     auto rep = record_edge_predecessors(pm, on_edge_relaxed());
