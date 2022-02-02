@@ -105,15 +105,17 @@ check_result(const results &rs, const result &r)
 // TESTS.
 // *******************************************************************
 
-//       a
-//      /|\
-//     1 | 1   --1--
-//    /  |  \ /     \
-//   b   2   c       d
-//    \  |  / \     /
-//     2 | 1   --10--
-//      \|/
-//       e
+/* 
+       a
+      /|\
+     1 | 1   --1--
+    /  |  \ /     \
+   b   2   c       d
+    \  |  / \     /
+     2 | 1   --10--
+      \|/
+       e
+*/
 
 BOOST_AUTO_TEST_CASE(yen_ksp_test1)
 {
@@ -175,16 +177,18 @@ BOOST_AUTO_TEST_CASE(yen_ksp_test1)
   }
 }
 
-// Here we make sure that some tentative path does not appear in the
-// set of tentative paths more than once.
-//
-// We search for all shortest paths in this graph:
-//
-//  /-----4-----\
-// a--1--b---1---c
-//        \--2--/
-//
-// There should be only three shortest paths.
+/*
+Here we make sure that some tentative path does not appear in the
+set of tentative paths more than once.
+
+We search for all shortest paths in this graph:
+
+ /-----4-----\
+a--1--b---1---c
+       \--2--/
+
+There should be only three shortest paths.
+*/
 
 BOOST_AUTO_TEST_CASE(yen_ksp_test2)
 {

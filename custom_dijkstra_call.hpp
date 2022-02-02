@@ -98,7 +98,7 @@ namespace boost {
 
     struct visitor
     {
-      typedef on_examine_vertex event_filter;
+      [[maybe_unused]] typedef on_examine_vertex event_filter;
       visitor(typename Graph::vertex_descriptor dst): m_dst(dst) {}
       void operator()(typename Graph::vertex_descriptor v, const Graph& g) {
         if (v == m_dst)
